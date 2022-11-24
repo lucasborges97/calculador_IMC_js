@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url(/02_calculador_imc/fundo.jpg);
+    background-image: url(/fundo.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

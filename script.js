@@ -10,12 +10,33 @@ let imc = 0;
 const salvarInfo = (nomeValor, alturaValor, pesoValor) => {
 
     imc = (pesoValor / (alturaValor * alturaValor)).toFixed(2);
+    let faixa = '';
+
+    if(imc < 18.5) {
+        faixa = ' e sua faixa é Abaixo do Peso';
+    }
+    else if(imc > 18.49 && imc < 25) {
+        faixa = ' e sua faixa é Peso Normal';
+    }
+    else if(imc >= 25 && imc < 30) {
+        faixa = ' e sua faixa é Pré-Obesidade';
+    }
+    else if(imc >= 30 && imc < 35) {
+        faixa = ' e sua faixa é Obesidade - I';
+    }
+    else if(imc >= 35 && imc < 40) {
+        faixa = ' e sua faixa é Obesidade - II';
+    }
+    else if(imc >= 40) {
+        faixa = ' e sua faixa é Obesidade - III';
+    }
+
 
     const div = document.createElement("div");
     div.classList.add("itens-hist");
 
     const texto = document.createElement("h3");
-    texto. innerText = nomeValor + ' com IMC igual a ' + imc;
+    texto. innerText = nomeValor + ' com IMC igual a ' + imc + faixa;
     div.appendChild(texto);
 
     const delBtn = document.createElement("button");
